@@ -184,16 +184,26 @@ bindsym $mod+r mode "resize"
 bar {
 	tray_output primary
         status_command i3status
+	bindsym button4 nop
+	bindsym button5 nop
 }
 
 
 #CUSTOM CONFIG
+
+#Adjust the brightness using brightnessctl:
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+Control+m move workspace to output right
 bindsym $mod+Control+h move workspace to output left
 #configure displays :
 exec --no-startup-id xrandr --output HDMI-2 --auto --primary --left-of eDP-1
+exec --no-startup-id volumeicon
 exec --no-startup-id compton
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome'
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
+exec --no-startup-id i3-msg 'workspace 1; exec google-chrome --password-store=gnome'
 workspace 1 output HDMI-2
 exec --no-startup-id i3-msg 'workspace 2; exec gnome-terminal'
 
