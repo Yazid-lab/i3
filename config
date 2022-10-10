@@ -191,6 +191,13 @@ bar {
 
 #CUSTOM CONFIG
 
+# GET DEM BORDERS OUT OF HERE
+for_window [class="^.*"] border pixel 2
+                          # class                 border  backgr. text    indicator child_border
+for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+
+
+
 #Adjust the brightness using brightnessctl:
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
@@ -198,6 +205,7 @@ bindsym $mod+Control+m move workspace to output right
 bindsym $mod+Control+h move workspace to output left
 #configure displays :
 exec --no-startup-id xrandr --output HDMI-2 --auto --primary --left-of eDP-1
+exec --no-startup-id xset s off
 exec --no-startup-id volumeicon
 exec --no-startup-id compton
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
