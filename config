@@ -208,6 +208,7 @@ exec --no-startup-id xrandr --output HDMI-2 --auto --primary --left-of eDP-1
 exec --no-startup-id xset -dpms
 exec --no-startup-id volumeicon
 exec --no-startup-id compton
+exec_always --no-startup-id numlockx on
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
