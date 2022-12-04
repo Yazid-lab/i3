@@ -204,14 +204,14 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+Control+m move workspace to output right
 bindsym $mod+Control+h move workspace to output left
 #configure displays :
-exec --no-startup-id xrandr --output HDMI-2 --auto --primary --left-of eDP-1
+exec --no-startup-id xrandr --output HDMI-2 --auto --primary --right-of eDP-1
+exec --no-startup-id xset s off
+workspace 1 output HDMI-2
 exec --no-startup-id volumeicon
 exec --no-startup-id compton
 exec_always --no-startup-id numlockx on
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome --password-store=gnome; fullscreen'
-workspace 1 output HDMI-2
 exec --no-startup-id i3-msg 'workspace 2; exec gnome-terminal; fullscreen'
-
+exec --no-startup-id i3-msg 'workspace 1; exec google-chrome --password-store=gnome; fullscreen'
