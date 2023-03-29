@@ -209,12 +209,12 @@ exec --no-startup-id volumeicon
 exec --no-startup-id compton
 exec_always --no-startup-id numlockx on
 assign [class="google-chrome"] 1
-assign [class="gnome-terminal"] 2
+assign [class="kitty"] 2
 assign [class="thunderbird"] 3
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
-exec --no-startup-id i3-msg 'workspace 2; exec gnome-terminal; fullscreen'
+exec --no-startup-id i3-msg 'workspace 2; exec kitty; fullscreen'
 exec --no-startup-id i3-msg 'workspace 3; exec thunderbird';
 exec --no-startup-id i3-msg 'workspace 1; exec google-chrome --password-store=gnome; fullscreen'
 exec --no-startup-id xset s off
